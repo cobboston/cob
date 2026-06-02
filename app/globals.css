@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces */
+  --color-cream: #f9f5ec;
+  --color-sand: #f0e7d6;
+  --color-paper: #fffdf8;
+
+  /* Ink / text */
+  --color-ink: #16221b;
+  --color-muted: #5c6960;
+
+  /* Kigezi forest greens */
+  --color-forest: #1f4d3a;
+  --color-forest-deep: #11281e;
+  --color-moss: #2f6b50;
+  --color-sage: #88a892;
+
+  /* Warm earth accents */
+  --color-gold: #cf962b;
+  --color-gold-soft: #e7c779;
+  --color-clay: #b0512a;
+
+  /* Fonts */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for the sticky header when jumping to anchors */
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold-soft);
+  color: var(--color-forest-deep);
+}
+
+/* Display type defaults */
+.font-display {
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+/* Thin uppercase eyebrow label */
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Subtle grain overlay used on dark panels */
+.grain {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+}

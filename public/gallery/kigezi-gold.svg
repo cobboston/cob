@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e2b0"/>
+      <stop offset="0.55" stop-color="#e7b85a"/>
+      <stop offset="1" stop-color="#cf962b"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.85">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5c3410" stop-opacity="0.28"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#sky)"/>
+  <circle cx="300" cy="300" r="58" fill="#fff3d6" opacity="0.9"/>
+  <circle cx="300" cy="300" r="110" fill="#fff3d6" opacity="0.22"/>
+  <path fill="#5c6960" fill-opacity="0.55" d="M0 500 C 120 500 160 436 270 436 C 370 436 410 516 510 500 C 555 492 578 488 600 486 L600 800 L0 800 Z"/>
+  <path fill="#3a4a3f" d="M0 588 C 130 588 170 528 290 528 C 410 528 450 606 560 590 C 580 587 590 585 600 584 L600 800 L0 800 Z"/>
+  <path fill="#11281e" d="M0 686 C 150 686 205 654 320 664 C 440 674 505 696 600 686 L600 800 L0 800 Z"/>
+  <rect width="600" height="800" fill="url(#vig)"/>
+</svg>
