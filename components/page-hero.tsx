@@ -17,7 +17,7 @@ export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-16 -z-10 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-gold-soft/25 blur-[120px]"
       />
-      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 px-6 pb-44 pt-28 sm:gap-12 sm:pb-48 lg:grid-cols-2 lg:items-start lg:gap-10 lg:pb-36 lg:pt-32">
+      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-6 pb-44 pt-28 sm:gap-12 sm:pb-48 lg:grid-cols-2 lg:items-start lg:gap-10 lg:pb-20 lg:pt-28">
         <div className="text-center lg:text-left">
           <Reveal>
             <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-forest/15 bg-paper/60 px-4 py-1.5 text-forest">
