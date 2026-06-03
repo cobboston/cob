@@ -16,7 +16,7 @@ export function Hills({ className, flip = false }: HillsProps) {
     <svg
       aria-hidden="true"
       viewBox="0 0 1440 320"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="none"
       className={className}
       style={flip ? { transform: "scaleY(-1)" } : undefined}
     >

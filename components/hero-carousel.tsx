@@ -48,7 +48,7 @@ export function HeroCarousel() {
             className="object-cover"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-deep/65 via-forest-deep/5 to-transparent" />
-          <figcaption className="absolute inset-x-0 bottom-0 px-5 pb-5 pt-12 text-sm font-semibold uppercase tracking-[0.16em] text-cream/95">
+          <figcaption className="absolute inset-x-0 bottom-0 pb-7 pl-5 pr-16 pt-12 text-sm font-semibold uppercase tracking-[0.16em] text-cream/95">
             {slide.caption}
           </figcaption>
         </div>
