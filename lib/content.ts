@@ -23,9 +23,9 @@ export const NAV_LINKS = [
 
 export const HERO = {
   eyebrow: "Community of Banyakigezi · Boston",
-  title: "Transforming shared heritage into opportunity.",
+  title: "From the terraced hills of Kigezi to the heart of New England.",
   // The word that gets the accent treatment in the headline.
-  emphasis: "opportunity",
+  emphasis: "Kigezi",
   lead: "We bring together people with roots in Uganda's Kigezi region and their families across Massachusetts and New England — building networks of trust, mentorship, and friendship that help every member flourish.",
   primaryCta: { label: "Join the community", href: "#join" },
   secondaryCta: { label: "Our story", href: "/about" },
