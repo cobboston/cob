@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
 import { Hills } from "@/components/hills";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { ScrollCue } from "@/components/scroll-cue";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -42,6 +43,7 @@ export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
           <HeroCarousel />
         </div>
       </div>
+      <ScrollCue />
       <Hills className="absolute bottom-0 left-0 z-0 h-40 w-full sm:h-52" />
     </section>
   );

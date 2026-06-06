@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { HERO, DISTRICTS } from "@/lib/content";
 import { Hills } from "@/components/hills";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { ScrollCue } from "@/components/scroll-cue";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -127,6 +128,8 @@ export function Hero() {
           <HeroCarousel />
         </div>
       </div>
+
+      <ScrollCue />
 
       {/* terraced hills anchored to the bottom */}
       <Hills className="absolute bottom-0 left-0 z-0 h-40 w-full sm:h-52" />
