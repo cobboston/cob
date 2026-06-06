@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CalendarDays, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { EVENTS, type EventItem } from "@/lib/content";
@@ -25,8 +26,9 @@ function parseDate(iso: string) {
 function EventCard({ event, past }: { event: EventItem; past?: boolean }) {
   const { month, day } = parseDate(event.dateISO);
   return (
-    <article
-      className={`flex flex-col gap-5 rounded-2xl border border-forest/10 bg-paper p-5 transition-colors hover:border-forest/25 sm:flex-row sm:items-stretch sm:gap-6 ${
+    <Link
+      href={`/events/${event.slug}`}
+      className={`group flex flex-col gap-5 rounded-2xl border border-forest/10 bg-paper p-5 transition-all hover:-translate-y-0.5 hover:border-forest/25 hover:shadow-md sm:flex-row sm:items-stretch sm:gap-6 ${
         past ? "opacity-75" : ""
       }`}
     >
@@ -52,8 +54,12 @@ function EventCard({ event, past }: { event: EventItem; past?: boolean }) {
             <CalendarDays size={13} /> {event.dateLabel}
           </span>
         </div>
-        <h3 className="font-display mt-2 text-xl font-semibold text-forest-deep">
+        <h3 className="font-display mt-2 inline-flex items-center gap-1.5 text-xl font-semibold text-forest-deep">
           {event.title}
+          <ArrowRight
+            size={16}
+            className="text-forest opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100"
+          />
         </h3>
         <p className="mt-1.5 text-[0.95rem] leading-relaxed text-muted">
           {event.blurb}
@@ -67,7 +73,7 @@ function EventCard({ event, past }: { event: EventItem; past?: boolean }) {
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 

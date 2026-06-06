@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
@@ -21,14 +22,26 @@ export function TeamGrid() {
           {TEAM.members.map((member, i) => (
             <Reveal key={member.name} delay={(i % 3) * 0.06}>
               <article className="flex h-full flex-col items-start rounded-2xl border border-forest/10 bg-paper p-6 transition-all hover:-translate-y-1 hover:border-forest/20 hover:shadow-md">
-                <span
-                  className={`font-display inline-flex h-14 w-14 items-center justify-center rounded-full text-lg font-semibold ${
-                    AVATAR_TINTS[i % AVATAR_TINTS.length]
-                  }`}
-                  aria-hidden
-                >
-                  {member.initials}
-                </span>
+                {member.image ? (
+                  <span className="relative h-14 w-14 overflow-hidden rounded-full">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="56px"
+                      className="object-cover"
+                    />
+                  </span>
+                ) : (
+                  <span
+                    className={`font-display inline-flex h-14 w-14 items-center justify-center rounded-full text-lg font-semibold ${
+                      AVATAR_TINTS[i % AVATAR_TINTS.length]
+                    }`}
+                    aria-hidden
+                  >
+                    {member.initials}
+                  </span>
+                )}
                 <h3 className="font-display mt-4 text-xl font-semibold text-forest-deep">
                   {member.name}
                 </h3>
