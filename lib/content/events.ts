@@ -67,6 +67,6 @@ export const EVENTS = {
   cta: {
     note: "Want to be notified about upcoming gatherings, or host one of your own?",
     label: "Email us about events",
-    href: "mailto:hello@cobboston.org?subject=COB%20Events",
+    href: "mailto:info@cobboston.org?subject=COB%20Events",
   },
 };

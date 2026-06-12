@@ -7,5 +7,5 @@ export const JOIN = {
     "Find mentorship, opportunities, and a network that has your back",
     "Help preserve and celebrate the culture and values of Kigezi",
   ],
-  cta: { label: "Email us to join", href: `mailto:hello@cobboston.org` },
+  cta: { label: "Email us to join", href: `mailto:info@cobboston.org` },
 };
