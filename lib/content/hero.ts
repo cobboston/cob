@@ -34,17 +34,17 @@ export const HERO_SLIDES: HeroSlide[] = [
 ];
 
 export const BOSTON_POOL: HeroSlide[] = [
-  { src: "/gallery/boston/boston-1.jpg", alt: "Boston gathering", caption: "Home in New England" },
-  { src: "/gallery/boston/boston-3.jpg", alt: "Boston community moment", caption: "New England fellowship" },
-  { src: "/gallery/boston/boston2.jpg", alt: "Boston meet-up", caption: "Boston community" },
+  { src: "/gallery/boston/boston-1.jpg", alt: "Boston ", caption: "New England" },
+  { src: "/gallery/boston/boston-3.jpg", alt: "Boston", caption: "New England" },
+  { src: "/gallery/boston/boston2.jpg", alt: "Boston", caption: "Boston" },
 ];
 
 export const HOME_POOL: HeroSlide[] = [
-  { src: "/gallery/home/home-1.JPG", alt: "The hills of Kigezi", caption: "The hills of Kigezi" },
-  { src: "/gallery/home/home-2.JPG", alt: "Southwestern Uganda landscape", caption: "Kigezi homelands" },
-  { src: "/gallery/home/home-3.JPG", alt: "Highlands of southwestern Uganda", caption: "Kigezi highlands" },
-  { src: "/gallery/home/home-4.JPG", alt: "Southwestern Uganda landscape", caption: "Kigezi homelands" },
-  { src: "/gallery/home/home-5.JPG", alt: "Southwestern Uganda landscape", caption: "Kigezi homelands" },
+  { src: "/gallery/home/home-1.JPG", alt: "Kigezi", caption: "Kigezi" },
+  { src: "/gallery/home/home-2.JPG", alt: "Kigezi", caption: "Kigezi" },
+  { src: "/gallery/home/home-3.JPG", alt: "Kigezi", caption: "Kigezi" },
+  { src: "/gallery/home/home-4.JPG", alt: "Kigezi", caption: "Kigezi" },
+  { src: "/gallery/home/home-5.JPG", alt: "Kigezi", caption: "Kigezi" },
 ];
 
 export const ABOUT_POOL: HeroSlide[] = [

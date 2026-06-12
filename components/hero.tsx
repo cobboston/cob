@@ -40,7 +40,7 @@ export function Hero() {
         className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-gold-soft/30 blur-[120px]"
       />
 
-      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-6 pt-24 pb-24 sm:gap-12 sm:pt-28 sm:pb-28 lg:grid-cols-[2fr_2.5fr] lg:gap-10 lg:py-24">
+      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-6 px-10 pt-16 pb-16 sm:gap-10 sm:px-12 sm:pt-24 sm:pb-24 lg:px-12 lg:grid-cols-[2fr_2.5fr] lg:gap-10 lg:py-24">
         <motion.div
           variants={container}
           initial="hidden"
@@ -57,7 +57,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display mt-6 text-balance text-3xl font-semibold leading-[1.06] text-forest-deep sm:mt-7 sm:text-4xl sm:leading-[1.02] lg:text-5xl"
+            className="font-display mt-4 text-balance text-3xl font-semibold leading-[1.06] text-forest-deep sm:mt-6 sm:text-4xl sm:leading-[1.02] lg:text-5xl"
           >
             {before}
             <span className="relative whitespace-nowrap text-clay">
@@ -82,18 +82,18 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl lg:mx-0"
+            className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:mt-6 sm:text-xl lg:mx-0"
           >
             {HERO.lead}
           </motion.p>
 
           <motion.div
             variants={item}
-            className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start"
+            className="mt-6 flex flex-row items-center justify-center gap-3 sm:mt-8 lg:justify-start"
           >
             <Link
               href={HERO.primaryCta.href}
-              className="group inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-base font-semibold text-cream shadow-sm transition-all hover:bg-forest-deep hover:shadow-lg"
+              className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-forest px-4 py-2 text-sm font-semibold text-cream shadow-sm transition-all hover:bg-forest-deep hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
             >
               {HERO.primaryCta.label}
               <ArrowRight
@@ -103,7 +103,7 @@ export function Hero() {
             </Link>
             <Link
               href={HERO.secondaryCta.href}
-              className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-3.5 text-base font-semibold text-forest-deep transition-colors hover:bg-forest/5"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-forest/20 px-4 py-2 text-sm font-semibold text-forest-deep transition-colors hover:bg-forest/5 sm:px-6 sm:py-3 sm:text-base"
             >
               {HERO.secondaryCta.label}
             </Link>
@@ -111,7 +111,7 @@ export function Hero() {
 
           <motion.ul
             variants={item}
-            className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-muted lg:mx-0 lg:justify-start"
+            className="mx-auto mt-6 flex max-w-xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-muted sm:mt-8 lg:mx-0 lg:justify-start"
           >
             {DISTRICTS.map((d, i) => (
               <li key={d} className="flex items-center gap-3">
@@ -126,7 +126,7 @@ export function Hero() {
 
         <div className="relative z-10">
           <HeroCarousel
-            randomize={{ pools: [BOSTON_POOL, HOME_POOL], perPool: 3 }}
+            randomize={{ pools: [HOME_POOL, BOSTON_POOL], perPool: 3 }}
           />
         </div>
       </div>
