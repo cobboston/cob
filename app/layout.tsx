@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Community of Banyakigezi in Boston gathering",
+        alt: "Boston skyline at dusk — home of the Community of Banyakigezi in Boston",
       },
     ],
   },
