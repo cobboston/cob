@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { HERO, DISTRICTS } from "@/lib/content";
+import { HERO, DISTRICTS, BOSTON_POOL, HOME_POOL } from "@/lib/content";
 import { Hills } from "@/components/hills";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { ScrollCue } from "@/components/scroll-cue";
@@ -40,7 +40,7 @@ export function Hero() {
         className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-gold-soft/30 blur-[120px]"
       />
 
-      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-6 pb-44 pt-24 sm:gap-12 sm:pb-48 sm:pt-28 lg:grid-cols-2 lg:gap-10 lg:pb-36">
+      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-6 pt-24 pb-24 sm:gap-12 sm:pt-28 sm:pb-28 lg:grid-cols-[2fr_2.5fr] lg:gap-10 lg:py-24">
         <motion.div
           variants={container}
           initial="hidden"
@@ -57,7 +57,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.06] text-forest-deep sm:mt-7 sm:text-5xl sm:leading-[1.02] lg:text-6xl"
+            className="font-display mt-6 text-balance text-3xl font-semibold leading-[1.06] text-forest-deep sm:mt-7 sm:text-4xl sm:leading-[1.02] lg:text-5xl"
           >
             {before}
             <span className="relative whitespace-nowrap text-clay">
@@ -125,7 +125,9 @@ export function Hero() {
         </motion.div>
 
         <div className="relative z-10">
-          <HeroCarousel />
+          <HeroCarousel
+            randomize={{ pools: [BOSTON_POOL, HOME_POOL], perPool: 3 }}
+          />
         </div>
       </div>
 

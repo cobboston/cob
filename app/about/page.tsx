@@ -4,6 +4,7 @@ import { About } from "@/components/about";
 import { Heritage } from "@/components/heritage";
 import { VisionMission } from "@/components/vision-mission";
 import { Values } from "@/components/values";
+import { ABOUT_POOL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -18,6 +19,7 @@ export default function AboutPage() {
         eyebrow="Our story"
         title="A community rooted in heritage."
         lead="From the terraced hills of Kigezi to the heart of New England — who we are, where we come from, and what guides us forward."
+        pools={[ABOUT_POOL]}
       />
       <About />
       <Heritage />

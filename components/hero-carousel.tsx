@@ -1,38 +1,61 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
-import { HERO_SLIDES } from "@/lib/content";
+import {
+  HERO_SLIDES,
+  pickRandomSlides,
+  type HeroSlide,
+} from "@/lib/content";
 
-const SLIDES = HERO_SLIDES.slice(0, 3);
+type Props = {
+  slides?: HeroSlide[];
+  /**
+   * When provided, the carousel ignores `slides` after mount and shows up to
+   * `perPool * pools.length` slides sampled randomly from each pool and
+   * interleaved. Randomization happens client-side to avoid hydration drift.
+   */
+  randomize?: { pools: HeroSlide[][]; perPool: number };
+};
 
 /**
- * A single hero card that crossfades through up to three images, advancing
- * once per second. Each caption lives inside its slide so it fades in sync
- * with its image. Auto-advance is disabled under prefers-reduced-motion.
+ * A single hero card that crossfades through its slides every 4 seconds.
+ * Each caption lives inside its slide so it fades in sync with its image.
+ * Auto-advance is disabled under prefers-reduced-motion.
  */
-export function HeroCarousel() {
+export function HeroCarousel({ slides = HERO_SLIDES, randomize }: Props) {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
 
+  // Server render uses `slides`; after mount, swap in a random alternating
+  // set when randomize is provided. Keeps SSR/CSR markup identical.
+  const initial = useMemo(() => slides, [slides]);
+  const [display, setDisplay] = useState<HeroSlide[]>(initial);
+
   useEffect(() => {
-    if (reduce) return;
+    if (!randomize) return;
+    setDisplay(pickRandomSlides(randomize.pools, randomize.perPool));
+    setActive(0);
+  }, [randomize]);
+
+  useEffect(() => {
+    if (reduce || display.length <= 1) return;
     const id = setInterval(
-      () => setActive((a) => (a + 1) % SLIDES.length),
-      1000,
+      () => setActive((a) => (a + 1) % display.length),
+      4000,
     );
     return () => clearInterval(id);
-  }, [reduce]);
+  }, [reduce, display.length]);
 
   return (
     <motion.figure
       initial={reduce ? false : { opacity: 0, y: 28, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.75rem] bg-sand shadow-2xl ring-1 ring-forest-deep/10"
+      className="relative mx-auto aspect-[3/2] w-full overflow-hidden rounded-[1.75rem] bg-sand shadow-2xl ring-1 ring-forest-deep/10"
     >
-      {SLIDES.map((slide, i) => (
+      {display.map((slide, i) => (
         <div
           key={slide.src}
           className={`absolute inset-0 transition-opacity duration-700 ease-out ${
@@ -58,7 +81,7 @@ export function HeroCarousel() {
         className="absolute bottom-5 right-5 z-10 flex items-center gap-1.5"
         aria-hidden
       >
-        {SLIDES.map((slide, i) => (
+        {display.map((slide, i) => (
           <span
             key={slide.src}
             className={`h-1.5 rounded-full transition-all duration-500 ${

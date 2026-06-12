@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { EventsList } from "@/components/events-list";
-import { EVENTS } from "@/lib/content";
+import { EVENTS, EVENTS_POOL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -16,6 +16,7 @@ export default function EventsPage() {
         eyebrow={EVENTS.eyebrow}
         title={EVENTS.title}
         lead={EVENTS.lead}
+        pools={[EVENTS_POOL]}
       />
       <EventsList />
     </>

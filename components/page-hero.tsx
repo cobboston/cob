@@ -3,22 +3,33 @@ import { Reveal } from "@/components/reveal";
 import { Hills } from "@/components/hills";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { ScrollCue } from "@/components/scroll-cue";
+import type { HeroSlide } from "@/lib/content";
 
 type PageHeroProps = {
   eyebrow: string;
   title: ReactNode;
   lead?: ReactNode;
+  /** Pools to randomly sample slides from on each visit. */
+  pools?: HeroSlide[][];
+  /** How many slides to take from each pool. Defaults to 3. */
+  perPool?: number;
 };
 
 /** Compact interior-page header with the terraced-hill motif. */
-export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  lead,
+  pools,
+  perPool = 3,
+}: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-gradient-to-b from-cream via-cream to-sand">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-16 -z-10 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-gold-soft/25 blur-[120px]"
       />
-      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-6 pb-44 pt-28 sm:gap-12 sm:pb-48 lg:grid-cols-2 lg:items-start lg:gap-10 lg:pb-20 lg:pt-28">
+      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-6 pb-28 pt-28 sm:gap-12 sm:pb-28 lg:grid-cols-2 lg:gap-10 lg:py-24">
         <div className="text-center lg:text-left">
           <Reveal>
             <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-forest/15 bg-paper/60 px-4 py-1.5 text-forest">
@@ -40,7 +51,9 @@ export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
           )}
         </div>
         <div className="relative z-10">
-          <HeroCarousel />
+          <HeroCarousel
+            randomize={pools ? { pools, perPool } : undefined}
+          />
         </div>
       </div>
       <ScrollCue />
