@@ -40,7 +40,7 @@ export function Hero() {
         className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-gold-soft/30 blur-[120px]"
       />
 
-      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-6 px-10 pt-16 pb-16 sm:gap-10 sm:px-12 sm:pt-24 sm:pb-24 lg:px-12 lg:grid-cols-[2fr_2.5fr] lg:gap-10 lg:py-24">
+      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-6 px-6 pt-20 pb-16 sm:gap-10 sm:px-8 sm:pt-24 sm:pb-24 lg:px-12 lg:grid-cols-[2fr_2.5fr] lg:gap-10 lg:py-24">
         <motion.div
           variants={container}
           initial="hidden"
@@ -89,7 +89,7 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-center sm:justify-center lg:mx-0 lg:justify-start"
+            className="mt-6 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-8 lg:justify-start"
           >
             <Link
               href={HERO.primaryCta.href}
