@@ -89,11 +89,11 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-6 flex flex-row items-center justify-center gap-3 sm:mt-8 lg:justify-start"
+            className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-center sm:justify-center lg:mx-0 lg:justify-start"
           >
             <Link
               href={HERO.primaryCta.href}
-              className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-forest px-4 py-2 text-sm font-semibold text-cream shadow-sm transition-all hover:bg-forest-deep hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-forest px-4 py-2.5 text-sm font-semibold text-cream shadow-sm transition-all hover:bg-forest-deep hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
             >
               {HERO.primaryCta.label}
               <ArrowRight
@@ -103,7 +103,7 @@ export function Hero() {
             </Link>
             <Link
               href={HERO.secondaryCta.href}
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-forest/20 px-4 py-2 text-sm font-semibold text-forest-deep transition-colors hover:bg-forest/5 sm:px-6 sm:py-3 sm:text-base"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 px-4 py-2.5 text-sm font-semibold text-forest-deep transition-colors hover:bg-forest/5 sm:px-6 sm:py-3 sm:text-base"
             >
               {HERO.secondaryCta.label}
             </Link>

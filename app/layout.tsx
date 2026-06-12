@@ -45,12 +45,21 @@ export const metadata: Metadata = {
     siteName: "COB Boston",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Community of Banyakigezi in Boston gathering",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Community of Banyakigezi in Boston (COB)",
     description:
       "Transforming shared heritage into opportunity, leadership, and lasting impact.",
+    images: ["/og.jpg"],
   },
 };
 

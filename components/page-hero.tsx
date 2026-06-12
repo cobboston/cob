@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
 import { Hills } from "@/components/hills";
 import { HeroCarousel } from "@/components/hero-carousel";
-import { ScrollCue } from "@/components/scroll-cue";
 import type { HeroSlide } from "@/lib/content";
 
 type PageHeroProps = {
@@ -29,7 +28,7 @@ export function PageHero({
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-16 -z-10 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-gold-soft/25 blur-[120px]"
       />
-      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-8 px-8 pb-28 pt-28 sm:gap-12 sm:px-10 sm:pb-28 lg:px-12 lg:grid-cols-2 lg:gap-10 lg:py-24">
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 px-6 pb-24 pt-28 sm:gap-12 sm:px-8 sm:pb-28 sm:pt-32 lg:grid-cols-2 lg:gap-10 lg:px-12">
         <div className="text-center lg:text-left">
           <Reveal>
             <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-forest/15 bg-paper/60 px-4 py-1.5 text-forest">
@@ -56,8 +55,7 @@ export function PageHero({
           />
         </div>
       </div>
-      <ScrollCue />
-      <Hills className="absolute bottom-0 left-0 z-0 h-40 w-full sm:h-52" />
+      <Hills className="absolute bottom-0 left-0 z-0 h-20 w-full sm:h-28" />
     </section>
   );
 }
