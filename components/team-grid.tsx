@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { TEAM } from "@/lib/content";
 
-// Rotating avatar tints drawn from the palette.
 const AVATAR_TINTS = [
   "bg-forest text-cream",
   "bg-clay text-cream",
@@ -17,40 +16,44 @@ const AVATAR_TINTS = [
 export function TeamGrid() {
   return (
     <section className="bg-cream px-6 py-20 sm:py-24">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.members.map((member, i) => (
             <Reveal key={member.name} delay={(i % 3) * 0.06}>
-              <article className="flex h-full flex-col items-start rounded-2xl border border-forest/10 bg-paper p-6 transition-all hover:-translate-y-1 hover:border-forest/20 hover:shadow-md">
+              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-forest/10 bg-paper transition-all hover:-translate-y-1 hover:border-forest/20 hover:shadow-lg">
                 {member.image ? (
-                  <span className="relative h-14 w-14 overflow-hidden rounded-full">
+                  <div className="relative aspect-square w-full overflow-hidden bg-sage/30">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      sizes="56px"
-                      className="object-cover"
+                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
-                  </span>
+                  </div>
                 ) : (
-                  <span
-                    className={`font-display inline-flex h-14 w-14 items-center justify-center rounded-full text-lg font-semibold ${
+                  <div
+                    className={`flex aspect-square w-full items-center justify-center ${
                       AVATAR_TINTS[i % AVATAR_TINTS.length]
                     }`}
                     aria-hidden
                   >
-                    {member.initials}
-                  </span>
+                    <span className="font-display text-6xl font-semibold">
+                      {member.initials}
+                    </span>
+                  </div>
                 )}
-                <h3 className="font-display mt-4 text-xl font-semibold text-forest-deep">
-                  {member.name}
-                </h3>
-                <p className="text-sm font-semibold uppercase tracking-wide text-clay">
-                  {member.role}
-                </p>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
-                  {member.bio}
-                </p>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-xl font-semibold text-forest-deep">
+                    {member.name}
+                  </h3>
+                  <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-clay">
+                    {member.role}
+                  </p>
+                  <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
+                    {member.bio}
+                  </p>
+                </div>
               </article>
             </Reveal>
           ))}
